@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Slack</title>
+	<script>
+		window.jQuery = window.$ = require('./lib/jquery-2.1.4.min');
+		$(function(){
+			$('#mainWebview').bind(
+				"did-finish-load", 
+				function(){
+					this.insertCSS("* { font-family: Arial, Roboto, \"Droid Sans\", \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", \"メイリオ\", Meiryo, sans-serif !important; }");
+				}
+			);
+		});
+	</script>
+</head>
+<body>
+	<webview id="mainWebview" src="https://slack.com/signin" autosize="on"></webview>
+	<style>
+		webview {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	</style>
+</body>
+</html>
